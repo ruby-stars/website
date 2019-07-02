@@ -9,10 +9,19 @@ class ContactController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
 
-    if @contact.save
-      redirect_to thank_you_path
+    #if @contact.save
+    #  redirect_to thank_you_path
+    #else
+    #  render "new"
+    #end
+
+    @contact.request = request
+    if @contact.deliver
+      flash.now[:error] = nil
+      redirect_to thank_you_path, notice: 'Message sent successfully'
     else
-      render "new"
+      flash.now[:error] = 'Cannot send message'
+      render :new
     end
   end
 
