@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root to: 'about#index'
-  get 'contact', to: 'contact#index'
-  get 'contact/new', to: 'contact#new'
+  get 'contact', to: 'contact#new'
   post 'contact', to: 'contact#create'
   get 'thank_you', to: 'contact#thank_you'
 

@@ -1,4 +1,4 @@
-<%= form_with model: @contact, local: true do |form| %>
+<%= form_with url: contact_path, local: true do |form| %> <!-- model: @contact -->
   <div class="field">
     <%= form.text_field :firstName, placeholder: "Your name" %>
   </div>
