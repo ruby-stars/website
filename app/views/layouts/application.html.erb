@@ -10,11 +10,14 @@
   </head>
 
   <body>
-    <% if notice %>
-      <div role="alert">
-        <p><%= notice %></p>
-      </div>
-    <% end %>
+      <div>
+      <% flash.each do |key, value| %>
+        <div>
+          <a href="#" data-dismiss="alert">x</a>
+            <%= value %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
