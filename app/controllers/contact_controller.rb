@@ -1,18 +1,21 @@
 class ContactController < ApplicationController
-  def index
-  end
+  def index; end
 
-  #def new
-  #  @contact = Contact.new
-  #end
+  def new
+    @contact = Contact.new
+  end
 
   def create
     @contact = Contact.new(contact_params)
 
-    if @contact.save
-      redirect_to thank_you_path
+    @contact.request = request
+    if @contact.deliver
+      flash.now[:notice] = 'Thank you for your message. We will contact you shortly!'
+      flash.keep
+      redirect_to root_path
     else
-      render "new"
+      flash.now[:error] = 'Cannot send message'
+      render :new
     end
   end
 
@@ -20,8 +23,5 @@ class ContactController < ApplicationController
 
   def contact_params
     params.permit(:firstName, :email, :message)
-  end
-
-  def thank_you
   end
 end
