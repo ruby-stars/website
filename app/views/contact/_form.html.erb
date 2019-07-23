@@ -1,18 +1,18 @@
 <%= form_with url: contact_path, local: true do |form| %> <!-- model: @contact -->
 
-  <div class="field">
-    <%= form.text_field :firstName, placeholder: "Your name" %>
+  <div class="form-group">
+      <%= form.text_field :firstName, placeholder: "Your name", class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.text_field :email, placeholder: "Your email" %>
+  <div class="form-group">
+    <%= form.text_field :email, placeholder: "Your email", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.text_area :message, placeholder: "Your message to us" %>
+  <div class="form-group">
+    <%= form.text_area :message, placeholder: "Your message to us", rows:"10", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit "Send" %>
+  <div class="link">
+    <%= form.submit "Send", class: "btn btn-warning" %>
   </div>
 <% end %>
