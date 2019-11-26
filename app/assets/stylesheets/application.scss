@@ -15,24 +15,42 @@
 
  @import "bootstrap";
 
+ $yellow: #ffc107;
+
   body {
   text-align: center;
   margin-top: 10%;
  }
 
- h1, .link {
+ h1 {
    margin: 5% 0;
+   color: $yellow;
  }
 
 a {
   color: #fff;
 }
 
+.header-link {
+  color: #000;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: none;
+    color: $yellow;
+  }
+}
+
 .textmarker {
-  background-color: #ffc107;
+  background-color: $yellow;
   color: white;
 }
 
 .btn-warning {
   color: white;
+}
+
+.github {
+  width: 20%;
+  padding-top: 10%;
 }

@@ -1,5 +1,5 @@
-<h1>RubyStars</h1>
-<h5>a <strong>code curious</strong> study group</h5>
+<h1>Ruby Stars</h1>
+<h5>a <%= link_to "code curious", "https://www.codecurious.org/", target: :_blank, class: "header-link" %> study group</h5>
 
 <p>You want to learn Ruby? You attended a code curious beginner's workshop and want to continue learning? You are feeling lonely with your online tutorials and want to learn together with peers? You are generally interested in coding and web development? You are a Ruby Developer and want to teach?
 </p>
@@ -11,4 +11,8 @@
 
 <div class = "link">
 <%= link_to 'Get in touch', contact_path, class: "btn btn-warning" %>
+</div>
+
+<div>
+  <%= link_to(image_tag("Octocat.png", class: "github"), "https://github.com/ruby-stars", target: :_blank) %>
 </div>
